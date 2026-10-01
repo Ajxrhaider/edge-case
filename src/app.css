@@ -1,0 +1,117 @@
+/*
+ * Hizaki Labs palette sampled from the supplied website files:
+ * Indigo #6366F1; dark indigo #4F46E5; light gray #E5E7EB;
+ * emerald #10B981; teal #008C9E; midnight #0F172A;
+ * slate surface #1E293B; slate copy #334155; muted slate #64748B;
+ * scrollbar #475569; white #FFFFFF.
+ *
+ * Change these values to re-theme the app.
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+
+  --color-primary: #6366f1;
+  --color-primary-dark: #4f46e5;
+  --color-secondary: #e5e7eb;
+  --color-accent: #10b981;
+  --color-brand-teal: #008c9e;
+  --color-midnight: #0f172a;
+  --color-surface: #1e293b;
+  --color-copy: #334155;
+  --color-muted: #64748b;
+  --color-scrollbar: #475569;
+  --color-white: #ffffff;
+}
+
+html {
+  box-sizing: border-box;
+  min-height: 100%;
+  scroll-behavior: smooth;
+  scrollbar-color: var(--color-scrollbar) var(--color-midnight);
+  scrollbar-width: thin;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  background-color: var(--color-midnight);
+  background-image:
+    radial-gradient(ellipse at 12% 0%, rgba(0, 140, 158, 0.16), transparent 32rem),
+    radial-gradient(ellipse at 88% 4%, rgba(99, 102, 241, 0.2), transparent 34rem);
+  color: var(--color-secondary);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+::selection {
+  background: rgba(99, 102, 241, 0.35);
+  color: var(--color-white);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-midnight);
+}
+
+::-webkit-scrollbar-thumb {
+  border: 2px solid var(--color-midnight);
+  border-radius: 999px;
+  background: var(--color-scrollbar);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
